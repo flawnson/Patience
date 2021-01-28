@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Qeu from "./core/Qeu.js"
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Qeu />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

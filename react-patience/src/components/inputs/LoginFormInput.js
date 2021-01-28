@@ -1,6 +1,7 @@
 import React from "react"
 
-export default function Stats () {
+
+export default function LoginFormInput () {
     return (
         <div>
 

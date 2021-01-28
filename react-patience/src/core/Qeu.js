@@ -3,7 +3,7 @@ import React from "react"
 import FormInput from "../components/inputs/FormInput.js"
 
 
-function Qeu () {
+export default function Qeu () {
     return (
         <div>
             {/*Logo*/}
@@ -11,7 +11,7 @@ function Qeu () {
 
             </logo>
 
-            {/*Input Field*/}
+            {/*Input field for queueing codes*/}
             <FormInput>
 
             </FormInput>
