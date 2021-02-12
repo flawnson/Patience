@@ -2,7 +2,7 @@
   "random_seed": 69,
   "patron_config": {
     "num_patrons": 5,
-    "intervals": 10.0
+    "intervals": 10.0,
     "min_patience": 1,
     "max_patience": 3
   }
