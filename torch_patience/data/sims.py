@@ -4,12 +4,12 @@ import simpy
 from typing import *
 from logzero import logger
 
+from torch_patience.data.servers.server import source
+
 
 RANDOM_SEED = 42
-NEW_CUSTOMERS = 5  # Total number of customers
-INTERVAL_CUSTOMERS = 10.0  # Generate new customers roughly every x seconds
-MIN_PATIENCE = 1  # Min. customer patience
-MAX_PATIENCE = 3  # Max. customer patience
+NEW_CUSTOMERS = 25  # Total number of customers
+INTERVAL_CUSTOMERS = 5.0  # Generate new customers roughly every x seconds
 
 
 # Setup and start the simulation
