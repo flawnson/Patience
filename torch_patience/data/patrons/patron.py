@@ -33,5 +33,10 @@ def customer(env, name, counter, time_in_bank):
             logger.info('%7.4f %s: RENEGED after %6.3f' % (env.now, name, wait))
 
 
+class Patron:
+    def __init__(self, config):
+        self.config = config
 
+    def write(self):
+        pass
 

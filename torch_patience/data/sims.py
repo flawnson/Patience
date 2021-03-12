@@ -23,3 +23,32 @@ env.process(source(env, NEW_CUSTOMERS, INTERVAL_CUSTOMERS, counter))
 env.run()
 
 
+class QueueSim:
+    """A simpy simulation with a class structure to mimic OpenAI's gym"""
+    def __init__(self, config):
+        self.config = config
+
+    def reset(self):
+        pass
+
+    def render(self):
+        pass
+
+    def step(self):
+        pass
+
+    def close(self):
+        pass
+
+    def __repr__(self):
+        pass
+
+    def __str__(self):
+        self.render()
+
+
+
+
+
+
+
