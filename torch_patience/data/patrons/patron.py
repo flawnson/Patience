@@ -33,9 +33,28 @@ def customer(env, name, counter, time_in_bank):
             logger.info('%7.4f %s: RENEGED after %6.3f' % (env.now, name, wait))
 
 
-class Patron:
-    def __init__(self, config):
-        self.config = config
+class Prospect:
+    def __init__(self, config, id, env):
+        self.id = id  # A UID (probably just a name for now)
+        self.config = config  # Config dict from JSON file
+        self.patience = random.uniform(config["min_patience"], config["max_patience"])  # An assigned patience
+        self.servicing = random.uniform(config["min_servicing"], config["max_servicing"])  # An assigned service time
+        self.arrival = env.now  # The time the prospective customer is instantiated
+
+    def handle(self, env, counter):
+        with counter.request() as req:
+            # Wait for the counter or abort at the end of our tether
+            results = yield req | env.timeout(self.patience)
+
+            wait = env.now - self.arrival  # The time the prospective customer is instantiated to the current time
+
+            if req in results:
+                tib = random.expovariate(1.0 / self.servicing)  # NOT ACTUALLY PATIENCE (NEED TO UNDERSTAND AND FIX)
+
+                yield env.timeout(self.servicing)
+
+            else:
+                logger.info(f"{env.now} {self.name}: RENEGED after {wait}")
 
     def write(self):
         pass

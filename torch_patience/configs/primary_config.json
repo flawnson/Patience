@@ -1,9 +1,13 @@
 {
-  "random_seed": 69,
+  "run_name": "development_run",
+  "random_seed": 42,
   "patron_config": {
     "num_patrons": 5,
     "intervals": 10.0,
     "min_patience": 1,
     "max_patience": 3
+  },
+  "env_config": {
+    "max_capacity": 12
   }
 }
